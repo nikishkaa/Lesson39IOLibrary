@@ -7,7 +7,10 @@ public class Main {
         String binaryFileName = "D:/Прога/test.byn";
 
 
-        BinaryWorker.write(binaryFileName);
+//        BinaryWorker.write(binaryFileName);
+
+        String text = BinaryWorker.read(binaryFileName);
+        System.out.println(text);
 
     }
 }
