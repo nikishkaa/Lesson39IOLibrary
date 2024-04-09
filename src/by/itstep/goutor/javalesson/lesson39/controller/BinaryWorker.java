@@ -13,15 +13,24 @@ public class BinaryWorker {
                 stream.write(i);
             }
 
-            stream.flush();
 
-            stream.close();
+
 
 
         } catch (FileNotFoundException exception) {
+            System.out.println(exception);
         } catch (IOException exception) {
             System.out.println(exception);
 
+        }finally {
+            try {
+                if (stream != null) {
+                    stream.flush();
+                    stream.close();
+                }
+            }catch (IOException exception){
+                System.out.println(exception);
+            }
         }
 
 
@@ -41,14 +50,19 @@ public class BinaryWorker {
                 builder.append(number).append(" ");
             }
 
-
-            stream.close();
+            try {
+                if (stream != null) {
+                    stream.close();
+                }
+            } catch (IOException exception) {
+                System.out.println(exception);
+            }
 
 
         } catch (FileNotFoundException exception) {
-        } catch (IOException exception) {
-            System.out.println(exception);
 
+        }catch (IOException exception){
+            System.out.println(exception);
         }
 
         return builder.toString();

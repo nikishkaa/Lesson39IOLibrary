@@ -9,8 +9,13 @@ public class Main {
 
 //        BinaryWorker.write(binaryFileName);
 
-        String text = BinaryWorker.read(binaryFileName);
-        System.out.println(text);
+       /* String text = BinaryWorker.read(binaryFileName);
+        System.out.println(text);*/
 
+        String charFileName = "D:/Прога/test.txt";
+//        CharWorker.write(charFileName);
+
+        String buf = CharWorker.reader(charFileName);
+        System.out.println(buf);
     }
 }
