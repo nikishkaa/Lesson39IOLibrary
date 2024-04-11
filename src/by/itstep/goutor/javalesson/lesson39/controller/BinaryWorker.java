@@ -7,14 +7,10 @@ public class BinaryWorker {
 
         OutputStream stream = null;
         try {
-            stream = new FileOutputStream(fileName);
-
+            stream = new BufferedOutputStream(new FileOutputStream(fileName));
             for (int i = -1000; i < 0; i++) {
                 stream.write(i);
             }
-
-
-
 
 
         } catch (FileNotFoundException exception) {
@@ -22,13 +18,13 @@ public class BinaryWorker {
         } catch (IOException exception) {
             System.out.println(exception);
 
-        }finally {
+        } finally {
             try {
                 if (stream != null) {
                     stream.flush();
                     stream.close();
                 }
-            }catch (IOException exception){
+            } catch (IOException exception) {
                 System.out.println(exception);
             }
         }
@@ -42,7 +38,7 @@ public class BinaryWorker {
         InputStream stream = null;
         StringBuilder builder = new StringBuilder();
         try {
-            stream = new FileInputStream(fileName);
+//            stream = new BufferedOutputStream(new FileInputStream(fileName));
 
             int number;
 
@@ -61,7 +57,7 @@ public class BinaryWorker {
 
         } catch (FileNotFoundException exception) {
 
-        }catch (IOException exception){
+        } catch (IOException exception) {
             System.out.println(exception);
         }
 
