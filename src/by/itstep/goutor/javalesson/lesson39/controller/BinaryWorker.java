@@ -5,6 +5,7 @@ import java.io.*;
 public class BinaryWorker {
     public static void write(String fileName) {
 
+
         OutputStream stream = null;
         try {
             stream = new BufferedOutputStream(new FileOutputStream(fileName));
