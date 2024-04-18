@@ -1,4 +1,4 @@
-package by.itstep.goutor.javalesson.lesson39;
+package by.itstep.goutor.javalesson.lesson39.model.logic;
 
 import java.io.*;
 
@@ -8,7 +8,7 @@ public class BinaryWorker {
 
         try {
             stream = new FileOutputStream(filename);
-
+            stream = new BufferedOutputStream(stream);
             for (int i = -1000; i < 0; i++) {
                 stream.write(i);
             }
@@ -32,6 +32,7 @@ public class BinaryWorker {
 
         try {
             stream = new FileInputStream(filename);
+            stream = new BufferedInputStream(stream);
 
 
             int number;
